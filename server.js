@@ -20,7 +20,7 @@ app.get('/', (req, res) => {
 
 
 app.get('/tradutor',(req, res) => {
-    res.sendFile(__dirname + '\\pages\\index.html');
+    res.sendFile(__dirname + '\\pages\\tradutor.html');
 });
 
 // Finalmente, dizemos ao nosso servidor para começar a escutar na porta que definimos anteriormente.
