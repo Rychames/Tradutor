@@ -18,6 +18,11 @@ app.get('/', (req, res) => {
   res.send('Olá, Mundo!');
 });
 
+
+app.get('/tradutor',(req, res) => {
+    res.sendFile(__dirname + '\\pages\\index.html');
+});
+
 // Finalmente, dizemos ao nosso servidor para começar a escutar na porta que definimos anteriormente.
 // A função de callback é executada uma vez que o servidor esteja rodando e escutando naquela porta.
 app.listen(PORT, () => {
