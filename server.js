@@ -14,8 +14,8 @@ app.get('/', (req, res) => {
   // req contém informações sobre a requisição feita ao servidor.
   // res é um objeto que nos permite enviar respostas de volta ao cliente.
 
-  // Neste caso, estamos enviando a string 'Olá, Mundo!' de volta ao cliente.
-  res.send('Olá, Mundo!');
+  // Neste caso, estamos enviando uma página de login de volta ao cliente.
+  res.sendFile(__dirname + "\\pages\\index.html");
 });
 
 
