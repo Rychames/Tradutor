@@ -10,9 +10,36 @@
     <div class="container d-flex justify-content-center align-items-center">
         <p>Digite algo para traduzir para o inglês</p>
         <input type="text" class="form-control" placeholder="Digite aqui">
+        <button onclick="translateText()">Traduzir</button>
+        <p id="translated-text"></p>
     </div>
 
 
 
 </body>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        function translateText() {
+            // Obtém o texto do input
+            var text = document.querySelector('.form-control').value;
+            
+            // Envia uma solicitação POST para o endpoint de tradução
+            $.ajax({
+                url: '/translate',
+                type: 'POST',
+                contentType: 'application/json',
+                data: JSON.stringify({ text: text }),
+                success: function(response) {
+                    // Exibe o texto traduzido na página
+                    document.getElementById('translated-text').innerText = response.translation;
+                },
+                error: function(xhr, status, error) {
+                    // Exibe um erro se algo der errado
+                    alert('Error: ' + error);
+                }
+            });
+        }
+    </script>
+    
+    
 </html>
